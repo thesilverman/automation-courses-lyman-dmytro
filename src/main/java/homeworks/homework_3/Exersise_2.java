@@ -6,7 +6,7 @@ public class Exersise_2 {
 
     public static void main(String[] args) {
 
-        int season = 7;
+        int season = 9;
         switch (season) {
             case 12:
             case 1:

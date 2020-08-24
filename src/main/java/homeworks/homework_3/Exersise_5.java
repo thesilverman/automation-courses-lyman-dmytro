@@ -16,7 +16,7 @@ public class Exersise_5 {
             System.out.println(b);
         } else if ((c < a) & (c < b) & (c < d) & (c < f)) {
             System.out.println(c);
-        } else if ((d< a) & (d < b) & (d < c) & (d < f)) {
+        } else if ((d < a) & (d < b) & (d < c) & (d < f)) {
             System.out.println(d);
         } else if ((f < a) & (f < b) & (f < c) & (f < d)) {
             System.out.println(f);
@@ -28,7 +28,7 @@ public class Exersise_5 {
             System.out.println(b);
         } else if ((c > a) & (c > b) & (c > d) & (c > f)) {
             System.out.println(c);
-        } else if ((d> a) & (d > b) & (d > c) & (d > f)) {
+        } else if ((d > a) & (d > b) & (d > c) & (d > f)) {
             System.out.println(d);
         } else if ((f > a) & (f > b) & (f > c) & (f > d)) {
             System.out.println(f);
