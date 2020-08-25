@@ -6,14 +6,12 @@ public class Exersise_27 {
 
     public static void main(String[] args) {
 
-        int x = 100;
-        int y = 250;
+        int x = 80;
+        int y = 100;
 
-        int total = x + y;
-        double percentage = total * 0.7;
+        int result = y / x * 100;
 
-        System.out.println(total);
-        System.out.println(percentage);
+        System.out.println(result);
 
     }
 

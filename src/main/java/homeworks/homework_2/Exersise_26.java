@@ -2,23 +2,21 @@ package homeworks.homework_2;
 
 public class Exersise_26 {
 
-    //конвертирование времени
-
-//    public static void main(String[] args) {
-//
-//        int day = (24 * 3600);
-//        int hour = 3600;
-//        int minute = 60;
-//
-//        System.out.println(day);
-//        System.out.println(hour);
-//        System.out.println(minute);
-
-
-    //мой возраст в минутах скундах и днях
-
-
     public static void main(String[] args) {
+
+        //конвертирование времени
+
+        int s = 360;
+
+        int minute = s / 60;
+        double hours = s / 3600d;
+        double day = s / 86400d;
+
+        System.out.println(minute + " минут в : " + s + " секундах ");
+        System.out.println(hours + " часов в : " + s + " секундах ");
+        System.out.println(day + " дней в : " + s + " секундах ");
+
+        //мой возраст в минутах скундах и днях
 
         int my_years = 31;
 
@@ -34,11 +32,11 @@ public class Exersise_26 {
         int my_years_in_hours = my_years * day_in_years * minute_in_hours;
         int my_years_in_minute = my_years * day_in_years * minute_in_hours * second_in_minute;
 
-        System.out.println("Мои дни" + my_years_in_day);
-        System.out.println("Мои месяцы" + my_years_in_mouth);
-        System.out.println("Мои недели" + my_years_in_week);
-        System.out.println("Мои часы" + my_years_in_hours);
-        System.out.println("Мои минуты" + my_years_in_minute);
+        System.out.println(" Мои дни " + my_years_in_day);
+        System.out.println(" Мои месяцы " + my_years_in_mouth);
+        System.out.println(" Мои недели " + my_years_in_week);
+        System.out.println(" Мои часы " + my_years_in_hours);
+        System.out.println(" Мои минуты " + my_years_in_minute);
 
     }
 

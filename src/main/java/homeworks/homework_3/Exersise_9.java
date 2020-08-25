@@ -4,8 +4,6 @@ public class Exersise_9 {
 
     public static void main(String[] args) {
 
-
-
     }
 
 }

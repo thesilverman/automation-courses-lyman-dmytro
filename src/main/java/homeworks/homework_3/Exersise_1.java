@@ -6,13 +6,11 @@ public class Exersise_1 {
 
     public static void main(String[] args) {
 
-        int number = 2;
+        int number = 23;
 
-        if (number % 2 == 0) {
-            System.out.println(number + 2);
-        } else if (number % 1 == 0) {
-            System.out.println(number + 1);
-        }
+        int number2 = (number % 2 == 0) ? number + 2 : number + 1;
+
+        System.out.println(number2);
 
     }
 
