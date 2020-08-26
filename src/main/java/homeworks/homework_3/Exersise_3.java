@@ -12,7 +12,6 @@ public class Exersise_3 {
         int b = 0;
         int c = 5;
         int d = 1;
-        int minCoast;
 
         if ((a < b) & (a < c) & (a < d)) {
             System.out.println("a найменьшее число");
