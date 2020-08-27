@@ -14,15 +14,35 @@ public class Exersise_10 {
         System.out.println("Введите вторую цифру :");
         int numberTwo = scanner.nextInt();
 
-        System.out.println ("Введите операцию (доступные операции : +, -, *, / )");
-        String operation = scanner.next ();
+        System.out.println("Введите операцию (доступные операции : +, -, *, / )");
+        String operation = scanner.next();
 
-        if (numberOne == 0 || numberTwo == 0) {
-            System.out.println("Делить на ноль нельзя!");
+        int result = 0;
+
+        switch (operation) {
+            case "+":
+                result = numberOne + numberTwo;
+                break;
+            case "-":
+                result = numberOne - numberTwo;
+                break;
+            case "*":
+                result = numberOne * numberTwo;
+                break;
+            case "/":
+                result = numberOne / numberTwo;
+                break;
+            default:
+                System.out.println("Эта операция некорректна!");
         }
 
-        System.out.println (numberOne + numberTwo + operation);
+        if (result == 0) {
+            System.out.println("Делить или умножать на 0 нельзя!");
+        }
+
+            System.out.println(result);
+
+        }
+
 
     }
-
-}

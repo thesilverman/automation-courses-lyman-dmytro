@@ -9,7 +9,7 @@ public class Exersise_6 {
 
         if (name == name2) {
             System.out.println("these people are namesakes");
-        }else if (name != name2) {
+        }else  {
             System.out.println("these people are not namesakes");
         }
 
