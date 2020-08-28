@@ -30,14 +30,13 @@ public class Exersise_10 {
                 result = numberOne * numberTwo;
                 break;
             case "/":
+                if (numberTwo == 0) {
+                    System.out.println("Делить на 0 нельзя!");
+                }
                 result = numberOne / numberTwo;
                 break;
             default:
                 System.out.println("Эта операция некорректна!");
-        }
-
-        if (result == 0) {
-            System.out.println("Делить или умножать на 0 нельзя!");
         }
 
             System.out.println(result);

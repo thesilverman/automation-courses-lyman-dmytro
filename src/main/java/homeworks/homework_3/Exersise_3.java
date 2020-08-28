@@ -8,20 +8,37 @@ public class Exersise_3 {
 
     public static void main(String[] args) {
 
-        int a = 2;
-        int b = 0;
-        int c = 5;
-        int d = 1;
+        int a = 1;
+        int b = 6;
+        int c = 4;
+        int d = 5;
 
-        if ((a < b) & (a < c) & (a < d)) {
+        int countMin = 1;
+
+        if ((a <= b) & (a <= c) & (a <= d)) {
             System.out.println("a найменьшее число");
-        } else if ((b < a) & (b < c) & (b < d)) {
+            if (a == b) countMin++;
+                if (a == c) countMin++;
+                    if (a == d) countMin++;
+        } else if ((b <= a) & (b <= c) & (b <= d)) {
             System.out.println("b найменьшее число");
-        } else if ((c < a) & (c < b) & (c < d)) {
+            if (b == a) countMin++;
+                if (b == c) countMin++;
+                    if (b == d) countMin++;
+        } else if ((c <= a) & (c <= b) & (c <= d)) {
             System.out.println("c меньшее число");
-        } else if ((d < a) & (d < b) & (d < c)) {
+            if (c == a) countMin++;
+                if (c == b) countMin++;
+                    if (c == d) countMin++;
+        } else if ((d <= a) & (d <= b) & (d <= c)) {
             System.out.println("d меньшее число");
+            if (d == a) countMin++;
+                 if (d == b) countMin++;
+                     if (d == c) countMin++;
         }
+
+        System.out.println(countMin);
+
     }
 
 }
