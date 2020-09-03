@@ -11,37 +11,34 @@ public class Exersise_6 {
         System.out.println("Введите первую цифру :");
         int numberOne = scanner.nextInt();
 
-        System.out.println("Введите вторую цифру :");
-        int numberTwo = scanner.nextInt();
-
-        System.out.println("Введите операцию (доступные операции : +, -, *, / )");
-        String operation = scanner.next();
-
-        int result = 0;
-
-        for (int i = 1; i < 100000; i++){
-            if (!operation.equals("0")) {
-                switch (operation) {
-                    case "+":
-                        result = numberOne + numberTwo;
-                        continue;
-                    case "-":
-                        result = numberOne - numberTwo;
-                        continue;
-                    case "*":
-                        result = numberOne * numberTwo;
-                        continue;
-                    case "/":
-                        result = numberOne / numberTwo;
-                        continue;
+        int sum = 0;
+        while (numberOne > 0) {
+            System.out.println("Введите вторую цифру :");
+            int numberTwo = scanner.nextInt();
+            if (numberTwo > 0){
+                System.out.println("Введите операцию (доступные операции : +, -, *, / )");
+                String operation = scanner.next();
+                if (operation.equals("+")){
+                    sum = numberOne + numberTwo;
+                    System.out.println(sum);
+                }else System.out.println("Введен неправельный символ!!!");
+                    if (operation.equals("-")){
+                    sum = numberOne - numberTwo;
+                    System.out.println(sum);
+                }else System.out.println("Введен неправельный символ!!!");
+                    if (operation.equals("*")) {
+                    sum = numberOne * numberTwo;
+                    System.out.println(sum);
+                }else System.out.println("Введен неправельный символ!!!");
+                    if (operation.equals("/")){
+                    sum = numberOne / numberTwo;
+                    System.out.println(sum);
+                }else System.out.println("Введен неправельный символ!!!");
                 }
             }
-
+        System.out.println("Введен недопустимый символ!!!");
         }
-
-        System.out.println(numberOne + " " + operation + " " + numberTwo + " " +  " =  " + result);
-
     }
-}
+
 
 
