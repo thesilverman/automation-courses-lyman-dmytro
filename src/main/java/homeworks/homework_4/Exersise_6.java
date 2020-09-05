@@ -4,37 +4,44 @@ import java.util.Scanner;
 
 public class Exersise_6 {
 
-    public static class CalculatorAppSecondImpl {
+    public static void main(String[] args) {
 
-        public static abstract class Arithmetic {
-            public abstract double apply(double x, double y);
-        }
+        Scanner scanner = new Scanner(System.in);
 
-        public static class Add extends Arithmetic {
-            public double apply(double x, double y) {
-                return x + y;
-            }
-        }
+        System.out.println("Введите первую цифру :");
+        int numberOne = scanner.nextInt();
 
-        public static class Subtract extends Arithmetic {
-            public double apply(double x, double y) {
-                return x - y;
-            }
-        }
-
-        public static class Multiply extends Arithmetic {
-            public double apply(double x, double y) {
-                return x * y;
-            }
-        }
-
-        public static class Divide extends Arithmetic {
-            public double apply(double x, double y) {
-                return x / y;
+        int sum = 0;
+        while (numberOne > 0) {
+            System.out.println("Введите вторую цифру :");
+            int numberTwo = scanner.nextInt();
+            if (numberTwo > 0){
+                System.out.println("Введите операцию (доступные операции : +, -, *, / )");
+                String operation = scanner.next();
+                if (operation.equals("+")){
+                    sum = numberOne + numberTwo;
+                    System.out.println(sum);
+                    break;
+                }else System.out.println("Введен неправельный символ!!!");
+                    if (operation.equals("-")){
+                    sum = numberOne - numberTwo;
+                    System.out.println(sum);
+                    break;
+                }else System.out.println("Введен неправельный символ!!!");
+                    if (operation.equals("*")) {
+                    sum = numberOne * numberTwo;
+                    System.out.println(sum);
+                    break;
+                }else System.out.println("Введен неправельный символ!!!");
+                    if (operation.equals("/")){
+                    sum = numberOne / numberTwo;
+                    System.out.println(sum);
+                    break;
+                }else System.out.println("Введен неправельный символ!!!");
+                }
             }
         }
     }
-}
 
 
 
