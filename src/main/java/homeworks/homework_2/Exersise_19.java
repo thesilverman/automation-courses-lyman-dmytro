@@ -6,7 +6,7 @@ public class Exersise_19 {
 
     public static void main(String[] args) {
 
-        double fahrenheit = 25;
+        double fahrenheit = 30;
 
         double celsius = 5./9 * (fahrenheit - 32);
 

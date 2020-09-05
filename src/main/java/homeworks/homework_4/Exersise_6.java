@@ -4,41 +4,37 @@ import java.util.Scanner;
 
 public class Exersise_6 {
 
-    public static void main(String[] args) {
+    public static class CalculatorAppSecondImpl {
 
-        Scanner scanner = new Scanner(System.in);
+        public static abstract class Arithmetic {
+            public abstract double apply(double x, double y);
+        }
 
-        System.out.println("Введите первую цифру :");
-        int numberOne = scanner.nextInt();
-
-        int sum = 0;
-        while (numberOne > 0) {
-            System.out.println("Введите вторую цифру :");
-            int numberTwo = scanner.nextInt();
-            if (numberTwo > 0){
-                System.out.println("Введите операцию (доступные операции : +, -, *, / )");
-                String operation = scanner.next();
-                if (operation.equals("+")){
-                    sum = numberOne + numberTwo;
-                    System.out.println(sum);
-                }else System.out.println("Введен неправельный символ!!!");
-                    if (operation.equals("-")){
-                    sum = numberOne - numberTwo;
-                    System.out.println(sum);
-                }else System.out.println("Введен неправельный символ!!!");
-                    if (operation.equals("*")) {
-                    sum = numberOne * numberTwo;
-                    System.out.println(sum);
-                }else System.out.println("Введен неправельный символ!!!");
-                    if (operation.equals("/")){
-                    sum = numberOne / numberTwo;
-                    System.out.println(sum);
-                }else System.out.println("Введен неправельный символ!!!");
-                }
+        public static class Add extends Arithmetic {
+            public double apply(double x, double y) {
+                return x + y;
             }
-        System.out.println("Введен недопустимый символ!!!");
+        }
+
+        public static class Subtract extends Arithmetic {
+            public double apply(double x, double y) {
+                return x - y;
+            }
+        }
+
+        public static class Multiply extends Arithmetic {
+            public double apply(double x, double y) {
+                return x * y;
+            }
+        }
+
+        public static class Divide extends Arithmetic {
+            public double apply(double x, double y) {
+                return x / y;
+            }
         }
     }
+}
 
 
 
