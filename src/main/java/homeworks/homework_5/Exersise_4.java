@@ -13,16 +13,13 @@ public class Exersise_4 {
         double b = sc.nextDouble();
         System.out.println("Введите число c : ");
         double c = sc.nextDouble();
-        double x = 0;
+
+        double x = b * b - 4 * a * c;
 
         methodMath(a, b, x);
-        discrD(b, c, a);
+
     }
 
-    private static double discrD(double b, double a, double c) {
-        double x = b * b - 4 * a * c;
-        return x;
-    }
 
     private static void methodMath(double a, double b, double x) {
         if (x > 0) {
