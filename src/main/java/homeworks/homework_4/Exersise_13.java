@@ -28,14 +28,13 @@ public class Exersise_13 {
 
 
         int sum = 0;
-        int[] array = {firstNumber, secondNumber, thirdNumber, forthNumber, fifthNumber, sixNumber};
-        for (int num : array) {
-            sum = sum + num;
-        }
         long product = 1;
+        int[] array = {firstNumber, secondNumber, thirdNumber, forthNumber, fifthNumber, sixNumber};
         for (int x = 0; x < array.length; x++) {
             product *= array[x];
+            sum = sum + array[x];
         }
+
         System.out.println("Массив : " +
                 firstNumber + " " +
                 secondNumber + " " +
