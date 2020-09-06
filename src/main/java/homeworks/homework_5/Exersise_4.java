@@ -20,7 +20,6 @@ public class Exersise_4 {
 
     }
 
-
     private static void methodMath(double a, double b, double x) {
         if (x > 0) {
             double x1 = (-b - Math.sqrt(x)) / (2 * a);
