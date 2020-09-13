@@ -6,11 +6,19 @@ public class Exersise_7 {
 
         int[] array = {1, 2, 3, 4, 5};
         int middle = 0;
+        int sum = 0;
 
         for (int x: array) {
-            middle += x;
-            System.out.println(middle/array.length);
+            sum += x;
+
+        }      middle = sum/array.length;
+        System.out.println(middle);
+        for (int y: array) {
+            if (y< middle){
+                System.out.println(y);
+            }
         }
+
 
     }
 

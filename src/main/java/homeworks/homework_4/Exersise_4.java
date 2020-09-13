@@ -8,15 +8,18 @@ public class Exersise_4 {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите цифру");
-        String s = sc.next();
+        String[] s = sc.next().split("");
 
         int odd = 0, even = 0;
 
-        for (int i = 0; i < s.length(); i++)
-            if ((s.charAt(i) - '0') % 2 == 0) even++;
-            else odd++;
+        for (int i = 0; i < s.length; i++) {
+            int currentNumb = Integer.parseInt(s[i]);
 
-        System.out.println("odd: "  + odd + " even: " + even);
+
+            if ((currentNumb) % 2 == 0) even++;
+            else odd++;
+        }
+        System.out.println("odd: " + odd + " even: " + even);
 
     }
 
