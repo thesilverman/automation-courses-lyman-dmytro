@@ -1,5 +1,7 @@
 package homeworks.homework_7;
 
+import homeworks.Infrastructure.Exersise_1_alpha_numeric_alphaNumeric;
+
 public class Exersise_1_main {
 
     public static void main(String[] args) {
