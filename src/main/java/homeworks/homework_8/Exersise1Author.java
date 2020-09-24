@@ -24,7 +24,7 @@ public class  Exersise1Author {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName)  {
         this.lastName = lastName;
     }
 

@@ -9,7 +9,7 @@ public class Exersise_1_alpha_numeric_alphaNumeric {
 
     public String stringGenerator(String mode, int length){
 
-        StringBuilder result = new StringBuilder();
+         StringBuilder result = new StringBuilder();
 
         String tempString = "";
 

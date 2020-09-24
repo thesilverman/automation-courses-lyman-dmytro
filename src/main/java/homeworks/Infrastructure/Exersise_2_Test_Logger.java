@@ -3,7 +3,7 @@ package homeworks.Infrastructure;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Exersise_2_Test_Logger {
+public class  Exersise_2_Test_Logger {
 
     public static int counter = 1;
 
