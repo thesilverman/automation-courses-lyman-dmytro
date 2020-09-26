@@ -2,7 +2,7 @@ package homeworks.Infrastructure;
 
 import java.util.Random;
 
-public class Exersise_1_alpha_numeric_alphaNumeric {
+public class AlphaNumeric {
 
     public String str = "abcdefghijklmnopqrstuvwxyz";
     public String num = "0123456789";

@@ -4,12 +4,17 @@ import homeworks.Infrastructure.TestBase;
 
 public class LoginTests extends AuthTest {
 
+    public void beforeTest(){
+        beforeAuth();
+        logger.log("fill login");
+    }
+
     public void loginTest(){
         beforeAuth();
-        logger.Log("fill login");
-        logger.Log("fill password");
-        logger.Log("submit login form");
-        logger.Log("check is logged in");
+        logger.log("fill login");
+        logger.log("fill password");
+        logger.log("submit login form");
+        logger.log("check is logged in");
     }
 
 }

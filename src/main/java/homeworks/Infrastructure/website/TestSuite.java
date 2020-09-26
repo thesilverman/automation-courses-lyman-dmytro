@@ -11,8 +11,5 @@ public class TestSuite {
         test2.setup();
         test2.loginTest();
         test2.tearDown();
-
-
-
     }
 }

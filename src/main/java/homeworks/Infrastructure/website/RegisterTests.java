@@ -6,12 +6,12 @@ public class RegisterTests extends AuthTest {
 
     public void loginTest(){
         beforeAuth();
-        logger.Log("switch to registration page");
-        logger.Log("fill login");
-        logger.Log("fill password");
-        logger.Log("fill password");
-        logger.Log("submit registration form");
-        logger.Log("check is register in");
+        logger.log("switch to registration page");
+        logger.log("fill login");
+        logger.log("fill password");
+        logger.log("fill password");
+        logger.log("submit registration form");
+        logger.log("check is register in");
     }
 
 }
