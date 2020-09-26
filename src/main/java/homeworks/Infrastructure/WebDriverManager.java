@@ -3,7 +3,7 @@ package homeworks.Infrastructure;
 public class WebDriverManager {
 
     public String createBrowser(){
-        String testBrowser = ConfiguratiomManager.getInstance().getTestBrowser();
+        String testBrowser = ConfigurationManager.getInstance().getTestBrowser();
         switch (testBrowser){
             case "chrome":
                 return "new Google Chrome driver";

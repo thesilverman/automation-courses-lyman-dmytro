@@ -3,7 +3,7 @@ package homeworks.Infrastructure;
 public class TestServer {
 
     public String getUrl() {
-        String testEnviroment = ConfiguratiomManager.getInstance().getTestEnvironment();
+        String testEnviroment = ConfigurationManager.getInstance().getTestEnvironment();
 
 
         switch (testEnviroment) {

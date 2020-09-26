@@ -1,16 +1,16 @@
 package homeworks.Infrastructure;
 
-public class ConfiguratiomManager {
+public class ConfigurationManager {
 
-    private static ConfiguratiomManager instance;
+    private static ConfigurationManager instance;
 
-    private ConfiguratiomManager() {
+    private ConfigurationManager() {
 
     }
 
-    public static ConfiguratiomManager getInstance() {
+    public static ConfigurationManager getInstance() {
         if (instance == null) {
-            instance = new ConfiguratiomManager();
+            instance = new ConfigurationManager();
         }
         return instance;
     }
