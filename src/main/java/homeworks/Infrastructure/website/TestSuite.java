@@ -1,4 +1,4 @@
-package homeworks.Infrastructure.website;
+package homeworks.Infrastructure.website; 
 
 public class TestSuite {
     public static void main(String[] args) {
