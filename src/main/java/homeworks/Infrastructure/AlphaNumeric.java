@@ -1,15 +1,15 @@
-package homeworks.homework_7;
+package homeworks.Infrastructure;
 
 import java.util.Random;
 
-public class Exersise_1_alpha_numeric_alphaNumeric {
+public class AlphaNumeric {
 
     public String str = "abcdefghijklmnopqrstuvwxyz";
     public String num = "0123456789";
 
     public String stringGenerator(String mode, int length){
 
-        StringBuilder result = new StringBuilder();
+         StringBuilder result = new StringBuilder();
 
         String tempString = "";
 

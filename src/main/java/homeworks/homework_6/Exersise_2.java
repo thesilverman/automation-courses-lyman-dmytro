@@ -8,7 +8,7 @@ public class Exersise_2 {
         int[] freq = new int[str.length()];
         int i, j;
 
-        char string[] = str.toCharArray();
+        char[] string = str.toCharArray();
 
         for (i = 0; i < str.length(); i++) {
             freq[i] = 1;
