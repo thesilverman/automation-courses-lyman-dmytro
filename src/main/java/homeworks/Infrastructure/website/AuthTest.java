@@ -1,6 +1,6 @@
 package homeworks.Infrastructure.website;
 
-import homeworks.Infrastructure.TestBase;
+import homeworks.Infrastructure.base.TestBase;
 
 public class AuthTest extends TestBase {
 

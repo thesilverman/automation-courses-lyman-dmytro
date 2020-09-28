@@ -1,8 +1,8 @@
-package homeworks.Infrastructure;
+package homeworks.Infrastructure.base;
 
-import homeworks.Infrastructure.Logging.AbstractLogger;
 import homeworks.Infrastructure.Logging.FileTestLogger;
-import homeworks.Infrastructure.Logging.StdTestLogger;
+import homeworks.Infrastructure.TestServer;
+import homeworks.Infrastructure.wdm.WebDriverManager;
 
 public class TestBase {
 
@@ -12,9 +12,7 @@ public class TestBase {
     private String browser;
 
     public void setup(){
-        wdn = new WebDriverManager();
         logger = new FileTestLogger();
-        browser = wdn.createBrowser();
         server = new TestServer();
         String url = server.getUrl();
         logger.log(url);
@@ -34,6 +32,7 @@ public class TestBase {
     private void afterTest(){
         logger.atFinish();
     }
+
 
 //    public AbstractLogger getLogger(){
 //        return ConfigurationManager.getInstance().getCurrentEnvironment().equals("local") ? new StdTestLogger() :

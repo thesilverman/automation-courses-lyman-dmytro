@@ -1,7 +1,5 @@
 package homeworks.Infrastructure.website;
 
-import homeworks.Infrastructure.TestBase;
-
 public class LoginTests extends AuthTest {
 
     public void beforeTest(){
