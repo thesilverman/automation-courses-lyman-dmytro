@@ -2,25 +2,20 @@ package homeworks.Infrastructure.wdm;
 
 public interface WebDriverManager {
 
-    void getBrowser();
-    void destroyBrowser(String browser);
+     static String getBrowser(){
+        String runOn = ConfigurationManager.getInstance().getRunOn();
 
-//    public String createBrowser(){
-//        String testBrowser = ConfigurationManager.getInstance().getTestBrowser();
-//        switch (testBrowser){
-//            case "chrome":
-//                return "new Google Chrome driver";
-//            case "firefox":
-//                return "new Mozilla firefox driver";
-//            default:
-//                return "";
-//        }
-//    }
-//
-//    public void destroyBrowser(String browser){
-//        if (browser != null){
-//            System.out.println("Browser closed");
-//        }
-//    }
+        switch (runOn) {
+            case "local":
+                return "LocalWebDriverFactory";
+            case "remote":
+                return "RemoteWebDriverFactory";
+            case "cloud":
+                return "CloudWebDriverFactory";
+        }
+         return runOn;
+     }
+
+    void destroyBrowser(String browser);
 
 }

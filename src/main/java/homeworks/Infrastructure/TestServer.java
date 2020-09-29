@@ -1,6 +1,6 @@
 package homeworks.Infrastructure;
 
-import homeworks.Infrastructure.config.ConfigurationManager;
+import homeworks.Infrastructure.wdm.ConfigurationManager;
 
 public class TestServer {
 
