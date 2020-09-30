@@ -1,5 +1,7 @@
 package homeworks.Infrastructure;
 
+import homeworks.Infrastructure.wdm.ConfigurationManager;
+
 public class TestServer {
 
     public String getUrl() {

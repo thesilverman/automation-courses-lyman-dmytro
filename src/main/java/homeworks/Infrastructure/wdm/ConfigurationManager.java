@@ -1,4 +1,4 @@
-package homeworks.Infrastructure;
+package homeworks.Infrastructure.wdm;
 
 public class ConfigurationManager {
 
@@ -28,6 +28,10 @@ public class ConfigurationManager {
 
     public String getTestEnvironment(){
         return getEnvinromentVariableOrDefault("environment", "qa_env");
+    }
+
+    public String getRunOn(){
+        return getEnvinromentVariableOrDefault("runOn", "local");
     }
 
 }
