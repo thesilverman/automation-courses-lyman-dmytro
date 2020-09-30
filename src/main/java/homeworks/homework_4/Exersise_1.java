@@ -9,12 +9,17 @@ public class Exersise_1 {
         Random rand = new Random();
 
         int userNumber = 30;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <= 10; i++) {
             int randomNumber = rand.nextInt(100);
             if (userNumber == randomNumber) {
                 System.out.println("Число №" + randomNumber + " = " + userNumber + " - "  + "Бинго!");
                 break;
-            } 
+            }else if (userNumber>randomNumber) {
+                System.out.println("Большее число");
+            }else  {
+                System.out.println("Меньшее число");
+            }
+            System.out.println("Скрытое число : " + randomNumber);
         }
     }
 
