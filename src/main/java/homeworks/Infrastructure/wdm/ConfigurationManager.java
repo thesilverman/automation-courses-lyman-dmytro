@@ -31,7 +31,7 @@ public class ConfigurationManager {
     }
 
     public String getRunOn(){
-        return getEnvinromentVariableOrDefault("local", "default");
+        return getEnvinromentVariableOrDefault("runOn", "local");
     }
 
 }

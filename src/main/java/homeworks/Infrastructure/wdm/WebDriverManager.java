@@ -2,19 +2,7 @@ package homeworks.Infrastructure.wdm;
 
 public interface WebDriverManager {
 
-     static String getBrowser(){
-        String runOn = ConfigurationManager.getInstance().getRunOn();
-
-        switch (runOn) {
-            case "local":
-                return "LocalWebDriverFactory";
-            case "remote":
-                return "RemoteWebDriverFactory";
-            case "cloud":
-                return "CloudWebDriverFactory";
-        }
-         return runOn;
-     }
+    String getBrowser();
 
     void destroyBrowser(String browser);
 
