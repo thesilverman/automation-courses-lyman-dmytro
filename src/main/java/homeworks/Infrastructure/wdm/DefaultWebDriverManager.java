@@ -2,26 +2,45 @@ package homeworks.Infrastructure.wdm;
 
 public class DefaultWebDriverManager implements WebDriverManager{
 
-    @Override
-    public String getBrowser() {
-        String runOn = ConfigurationManager.getInstance().getRunOn();
-
+//    @Override
+//    public String getBrowser() {
+//        String runOn = ConfigurationManager.getInstance().getRunOn();
+//
+//        WebDriverFactory factory;
+//
+//        switch (runOn) {
+//            case "local":
+//                factory = new LocalWebDriverFactory();
+//                break;
+//            case "remote":
+//                factory = new RemoteWebDriverFactory();
+//                break;
+//            case "cloud":
+//                factory = new CloudWebDriverFactory();
+//                break;
+//            default:
+//                return "";
+//        }
+//        return factory.create();
+//    }
         WebDriverFactory factory;
 
-        switch (runOn) {
-            case "local":
+    public String getBrowser(RunOn run){
+        switch (run){
+            case CLOUD:
                 factory = new LocalWebDriverFactory();
-                break;
-            case "remote":
+            case LOCAL:
+                factory = new LocalWebDriverFactory();
+            case REMOTE:
                 factory = new RemoteWebDriverFactory();
-                break;
-            case "cloud":
-                factory = new CloudWebDriverFactory();
-                break;
             default:
                 return "";
         }
-        return factory.create();
+    }
+
+    @Override
+    public String getBrowser() {
+        return null;
     }
 
     @Override
