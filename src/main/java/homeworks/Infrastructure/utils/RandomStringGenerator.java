@@ -2,7 +2,7 @@ package homeworks.Infrastructure.utils;
 
 import java.util.Random;
 
-public class AlphaNumeric {
+public class RandomStringGenerator {
 
     public enum typeEnum {
         ALPHA(),

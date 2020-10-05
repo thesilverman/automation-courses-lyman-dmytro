@@ -1,12 +1,12 @@
 package homeworks.homework_7;
 
-import homeworks.Infrastructure.utils.AlphaNumeric;
+import homeworks.Infrastructure.utils.RandomStringGenerator;
 
 public class Exersise_1_main {
 
     public static void main(String[] args) {
 
-        AlphaNumeric stringon = new AlphaNumeric();
+        RandomStringGenerator stringon = new RandomStringGenerator();
         System.out.println(stringon.stringGenerator("alpha", 10));
         System.out.println(stringon.stringGenerator("alphaNumeric", 10));
         System.out.println(stringon.stringGenerator("numeric", 10));

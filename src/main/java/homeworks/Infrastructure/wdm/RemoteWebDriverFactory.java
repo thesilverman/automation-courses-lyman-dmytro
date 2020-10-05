@@ -2,16 +2,19 @@ package homeworks.Infrastructure.wdm;
 
 public class RemoteWebDriverFactory implements WebDriverFactory{
 
+    @Override
     public String create() {
-        String testBrowser = ConfigurationManager.getInstance().getTestBrowser();
-        switch (testBrowser) {
-            case "chrome":
+
+        BrowserType testBrowser = BrowserType.valueOf(ConfigurationManager.getInstance().getTestBrowser());
+        switch (testBrowser){
+            case CHROME:
                 return "new Google chrome driver";
-            case "firefox":
+            case FIREFOX:
                 return "new Mozilla firefox driver";
             default:
                 return "";
         }
+
     }
 
 }

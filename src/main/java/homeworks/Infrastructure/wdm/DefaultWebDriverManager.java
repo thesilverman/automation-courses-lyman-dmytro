@@ -26,7 +26,10 @@ public class DefaultWebDriverManager implements WebDriverManager{
         WebDriverFactory factory;
 
     public String getBrowser(RunOn run){
-        switch (run){
+
+        RunOn runOn = RunOn.valueOf(ConfigurationManager.getInstance().getRunOn());
+
+        switch (runOn){
             case CLOUD:
                 factory = new LocalWebDriverFactory();
             case LOCAL:
