@@ -27,7 +27,7 @@ public class DefaultWebDriverManager implements WebDriverManager{
 
     public String getBrowser(RunOn run){
 
-        RunOn runOn = RunOn.valueOf(ConfigurationManager.getInstance().getRunOn());
+        RunOn runOn = ConfigurationManager.getInstance().getRunOn();
 
         switch (runOn){
             case CLOUD:

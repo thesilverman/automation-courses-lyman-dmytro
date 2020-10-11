@@ -5,7 +5,7 @@ public class LocalWebDriverFactory implements WebDriverFactory {
     @Override
     public String create() {
 
-        BrowserType testBrowser = BrowserType.valueOf(ConfigurationManager.getInstance().getTestBrowser());
+        BrowserType testBrowser = ConfigurationManager.getInstance().getTestBrowser();
         switch (testBrowser){
             case CHROME:
                 return "new Google chrome driver";

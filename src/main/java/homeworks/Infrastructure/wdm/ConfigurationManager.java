@@ -22,16 +22,16 @@ public class ConfigurationManager {
                 currentVarValue;
     }
 
-    public String getTestBrowser(){
-        return getEnvinromentVariableOrDefault("browser", "chrome");
+    public BrowserType getTestBrowser(){
+        return BrowserType.valueOf(getEnvinromentVariableOrDefault("browser", "chrome").toUpperCase());
     }
 
     public String getTestEnvironment(){
         return getEnvinromentVariableOrDefault("environment", "qa_env");
     }
 
-    public String getRunOn(){
-        return getEnvinromentVariableOrDefault("runOn", "local");
+    public RunOn getRunOn(){
+        return RunOn.valueOf(getEnvinromentVariableOrDefault("runOn", "local"));
     }
 
 }
