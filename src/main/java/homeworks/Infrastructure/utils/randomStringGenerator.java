@@ -4,21 +4,21 @@ import java.util.Random;
 
 public class randomStringGenerator {
 
-    public enum typeEnum {
-//        ALPHA(),
-//        NUMERIC(),
-//        ALFANUMERIC();
-//
-//        private final String type;
-//
-//        typeEnum(String type){
-//            this.type = type;
-//        }
-//
-//        public String getType() {
-//            return type;
-//        }
-//    }
+//    public enum typeEnum {
+////        ALPHA(),
+////        NUMERIC(),
+////        ALFANUMERIC();
+////
+////        private final String type;
+////
+////        typeEnum(String type){
+////            this.type = type;
+////        }
+////
+////        public String getType() {
+////            return type;
+////        }
+////    }
 
     public String str = "abcdefghijklmnopqrstuvwxyz";
     public String num = "0123456789";
