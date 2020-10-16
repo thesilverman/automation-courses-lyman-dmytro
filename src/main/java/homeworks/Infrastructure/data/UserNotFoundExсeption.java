@@ -1,2 +1,8 @@
-package homeworks.Infrastructure.data;public class UserNotFoundExeption {
+package homeworks.Infrastructure.data;
+
+public class UserNotFoundExсeption extends IllegalArgumentException{
+
+    public UserNotFoundExсeption(String s) {
+        super(s);
+    }
 }
