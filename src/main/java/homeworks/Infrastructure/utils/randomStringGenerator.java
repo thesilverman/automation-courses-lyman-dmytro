@@ -4,26 +4,26 @@ import java.util.Random;
 
 public class randomStringGenerator {
 
-//    public enum typeEnum {
-////        ALPHA(),
-////        NUMERIC(),
-////        ALFANUMERIC();
-////
-////        private final String type;
-////
-////        typeEnum(String type){
-////            this.type = type;
-////        }
-////
-////        public String getType() {
-////            return type;
-////        }
-////    }
+     public enum typeEnum {
+        ALPHA(10),
+        NUMERIC(10),
+        ALFANUMERIC(10);
+
+        private final int type;
+
+        typeEnum(int type){
+            this.type = type;
+        }
+
+         public int getType() {
+            return type;
+        }
+    }
 
     public String str = "abcdefghijklmnopqrstuvwxyz";
     public String num = "0123456789";
 
-    public String stringGenerator(String mode, int length){
+    public String stringGenerator(String mode, int length, int typeEnum){
 
          StringBuilder result = new StringBuilder();
 
