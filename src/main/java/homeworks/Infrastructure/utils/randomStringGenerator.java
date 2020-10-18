@@ -5,38 +5,26 @@ import java.util.Random;
 public class randomStringGenerator {
 
      public enum typeEnum {
-        ALPHA(10),
-        NUMERIC(10),
-        ALFANUMERIC(10);
+        ALPHA("alfa"),
+        NUMERIC("numeric"),
+        ALFANUMERIC("alphaNumeric");
 
-        private final int type;
-
-        typeEnum(int type){
-            this.type = type;
-        }
-
-         public int getType() {
-            return type;
-        }
-    }
+         typeEnum(String mode) {
+         }
+     }
 
     public String str = "abcdefghijklmnopqrstuvwxyz";
     public String num = "0123456789";
 
-    public String stringGenerator(String mode, int length, int typeEnum){
-
-         StringBuilder result = new StringBuilder();
-
+    public String stringGenerator(typeEnum mode, int length){
         String tempString = "";
-
-        if (mode.equals("alpha")){
-            tempString = str;
-        }
-        else if (mode.equals("alphaNumeric")){
-            tempString = str + num;
-        }
-        else if (mode.equals("numeric")){
-            tempString = num;
+        switch (mode){
+            case ALPHA:
+                tempString = str;
+            case NUMERIC:
+                tempString = num;
+            case ALFANUMERIC:
+                tempString = str + num;
         }
 
         Random rand = new Random();

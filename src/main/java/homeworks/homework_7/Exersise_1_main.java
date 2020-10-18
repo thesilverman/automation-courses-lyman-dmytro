@@ -6,10 +6,10 @@ public class Exersise_1_main {
 
     public static void main(String[] args) {
 
-//        randomStringGenerator.typeEnum typeEnum = new randomStringGenerator.typeEnum().getType();
-        System.out.println(randomStringGenerator.typeEnum.ALPHA);
-        System.out.println(randomStringGenerator.typeEnum.ALFANUMERIC);
-        System.out.println(randomStringGenerator.typeEnum.NUMERIC);
+        randomStringGenerator typeEnum = new randomStringGenerator();
+        System.out.println(typeEnum.stringGenerator(randomStringGenerator.typeEnum.ALFANUMERIC, 10));
+        System.out.println(typeEnum.stringGenerator(randomStringGenerator.typeEnum.ALPHA, 10));
+        System.out.println(typeEnum.stringGenerator(randomStringGenerator.typeEnum.NUMERIC, 10));
 
     }
 
