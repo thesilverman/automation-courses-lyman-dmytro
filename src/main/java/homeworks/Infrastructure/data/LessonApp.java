@@ -7,7 +7,7 @@ public class LessonApp {
     public static void main(String[] args) {
 
         FileDataMapper mapper = new FileDataMapper();
-        System.out.println(Arrays.toString(mapper.getAll()));
+        System.out.println(Arrays.toString(mapper.users.toArray()));
 
     }
 

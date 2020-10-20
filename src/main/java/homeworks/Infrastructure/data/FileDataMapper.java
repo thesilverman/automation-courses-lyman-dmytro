@@ -1,9 +1,11 @@
 package homeworks.Infrastructure.data;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileDataMapper implements DataMapper {
-    User[] users = new User[10];
+    List<User> users = new ArrayList<>();
 
     public FileDataMapper() {
         try (BufferedReader reader = new BufferedReader(new FileReader("users.txt"))) {
@@ -11,9 +13,9 @@ public class FileDataMapper implements DataMapper {
             while ((rb = reader.readLine()) != null) {
                 String[] splitedUser = rb.split(";");
 
-                for (int i = 0; i < users.length; i++) {
-                    if (users[i] == null) {
-                        users[i] = new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3]);
+                for (int i = 0; i < users.size(); i++) {
+                    if (users.get(i) == null) {
+                        users.add(i, new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3]));
                         break;
                     }
                 }
@@ -25,7 +27,7 @@ public class FileDataMapper implements DataMapper {
         }
     }
 
-    public User[] getAll() {
+    public List<User> getAll()  {
         return users;
     }
 
