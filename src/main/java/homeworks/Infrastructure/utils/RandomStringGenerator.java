@@ -2,21 +2,21 @@ package homeworks.Infrastructure.utils;
 
 import java.util.Random;
 
-public class randomStringGenerator {
+public class RandomStringGenerator {
 
-     public enum typeEnum {
+     public enum TypeEnum {
         ALPHA("alfa"),
         NUMERIC("numeric"),
         ALFANUMERIC("alphaNumeric");
 
-         typeEnum(String mode) {
+         TypeEnum(String mode) {
          }
      }
 
     public String str = "abcdefghijklmnopqrstuvwxyz";
     public String num = "0123456789";
 
-    public String stringGenerator(typeEnum mode, int length){
+    public String stringGenerator(TypeEnum mode, int length){
         String tempString = "";
         switch (mode){
             case ALPHA:
