@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileDataMapper implements DataMapper {
-    List<User> users = new ArrayList<>();
+    List<User> users = new ArrayList<User>();
 
     public FileDataMapper() {
         try (BufferedReader reader = new BufferedReader(new FileReader("users.txt"))) {
@@ -13,12 +13,11 @@ public class FileDataMapper implements DataMapper {
             while ((rb = reader.readLine()) != null) {
                 String[] splitedUser = rb.split(";");
 
-                for (int i = 0; i < users.size(); i++) {
-                    if (users.get(i) == null) {
-                        users.add(i, new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3]));
-                        break;
-                    }
-                }
+                User newUser = new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3]);
+                newUser.id = rb;
+                users.add(newUser);
+
+
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
