@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileDataMapper implements DataMapper {
-    List<User> users = new ArrayList<User>();
+    List<User> users = new ArrayList<>();
 
     public FileDataMapper() {
         try (BufferedReader reader = new BufferedReader(new FileReader("users.txt"))) {
