@@ -13,7 +13,7 @@ public class FileDataMapper implements DataMapper {
             while ((rb = reader.readLine()) != null) {
                 String[] splitedUser = rb.split(";");
 
-                User newUser = new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3]);
+                User newUser = new User(splitedUser[0],splitedUser[1],splitedUser[2], splitedUser[3]);
                 newUser.id = rb;
                 users.add(newUser);
 
