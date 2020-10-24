@@ -22,6 +22,10 @@ public class ConfigurationManager {
                 currentVarValue;
     }
 
+
+    public BrowserType getTestBrowser(){
+        return BrowserType.valueOf(getEnvinromentVariableOrDefault("browser", "chrome").toUpperCase());
+
     public String getTestBrowser(){
         return getEnvinromentVariableOrDefault("browser", "chrome");
     }
@@ -30,8 +34,13 @@ public class ConfigurationManager {
         return getEnvinromentVariableOrDefault("environment", "qa_env");
     }
 
+
+    public RunOn getRunOn(){
+        return RunOn.valueOf(getEnvinromentVariableOrDefault("runOn", "local"));
+
     public String getRunOn(){
         return getEnvinromentVariableOrDefault("runOn", "local");
+
     }
 
 }
