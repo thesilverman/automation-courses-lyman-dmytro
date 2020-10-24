@@ -1,15 +1,19 @@
 package homeworks.homework10;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestUrl {
 
     public String protocol;
     public String domain;
     public String port;
     public String path;
-    public String param;
+    public HashMap<String, String> params;
+    private HashMap<String, String> withParam;
 
     public static class Builder {
-        private TestUrl url;
+        private final TestUrl url;
 
         public Builder() {
             url = new TestUrl();
@@ -35,24 +39,25 @@ public class TestUrl {
             return this;
         }
 
-        public Builder withParam(String param) {
-            url.param = "?" + param;
+        public Builder params(HashMap<String, String> param) {
+            url.params = param;
             return this;
         }
 
-        public Builder withParam(String key, String value) {
-            url.protocol = "?" + key + "+" + value;
-            return this;
+       public Builder withParam(HashMap<String, String> params) {
+           url.withParam = params;
+           return this;
         }
 
-        public String build() {
+    public String build() {
             String result = "";
             new StringBuilder()
                     .append(url.protocol)
                     .append(url.domain)
                     .append(url.port)
                     .append(url.path)
-                    .append(url.param)
+                    .append(url.params)
+                    .append(url.withParam)
                     .toString();
             return result;
         }

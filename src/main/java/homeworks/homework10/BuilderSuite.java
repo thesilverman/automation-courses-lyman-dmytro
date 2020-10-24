@@ -8,7 +8,8 @@ public class BuilderSuite {
                 .withDomain("google.com.ua")
                 .withPort("80")
                 .withPath("/search")
-                .withParam("test")
+                .params()
+                .withParam()
                 .build();
 
     }
