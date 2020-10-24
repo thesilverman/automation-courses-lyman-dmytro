@@ -11,6 +11,9 @@ public class CloudWebDriverFactory implements WebDriverFactory{
             case CHROME:
                 return "new Google chrome driver";
             case FIREFOX:
+
+
+
     public String create() {
 
         String testBrowser = ConfigurationManager.getInstance().getTestBrowser();
@@ -19,6 +22,20 @@ public class CloudWebDriverFactory implements WebDriverFactory{
                 return "new Google chrome driver";
             case "firefox":
 
+
+                return "new Mozilla firefox driver";
+            default:
+                return "";
+        }
+
+
+
     }
 
+
+    }
+
+
+
+}
 

@@ -29,6 +29,9 @@ public class ConfigurationManager {
     public String getTestBrowser(){
         return getEnvinromentVariableOrDefault("browser", "chrome");
 
+
+
+
     }
 
     public String getTestEnvironment(){
