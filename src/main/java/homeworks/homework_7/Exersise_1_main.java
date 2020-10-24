@@ -2,6 +2,9 @@ package homeworks.homework_7;
 
 import homeworks.Infrastructure.utils.RandomStringGenerator;
 
+import homeworks.Infrastructure.utils.AlphaNumeric;
+
+
 public class Exersise_1_main {
 
     public static void main(String[] args) {
