@@ -40,7 +40,7 @@ public class TestUrl {
         }
 
         public Builder params(HashMap<String, String> param) {
-            url.params = param;
+            param = params("?", "+");
             return this;
         }
 
