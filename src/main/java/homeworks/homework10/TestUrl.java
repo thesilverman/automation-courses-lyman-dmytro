@@ -39,10 +39,10 @@ public class TestUrl {
             return this;
         }
 
-        public Builder params(HashMap<String, String> param) {
-            param = params("?", "+");
-            return this;
-        }
+//        public Builder params(HashMap<String, String> param) {
+//            param = params("?", "+");
+//            return this;
+//        }
 
        public Builder withParam(HashMap<String, String> params) {
            url.withParam = params;
