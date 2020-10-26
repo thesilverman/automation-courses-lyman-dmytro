@@ -9,11 +9,10 @@ public class TestUrl {
     public String domain;
     public String port;
     public String path;
-    public HashMap<String, String> params;
-    private HashMap<String, String> withParam;
+    HashMap<String, String> param = new HashMap<>();
 
     public static class Builder {
-        private final TestUrl url;
+        private TestUrl url;
 
         public Builder() {
             url = new TestUrl();
@@ -39,28 +38,28 @@ public class TestUrl {
             return this;
         }
 
-//        public Builder params(HashMap<String, String> param) {
-//            param = params("?", "+");
-//            return this;
-//        }
-
-       public Builder withParam(HashMap<String, String> params) {
-           url.withParam = params;
-           return this;
+        public Builder withParam(String param) {
+            url.param.put("0", "?");
+            return this;
         }
 
-    public String build() {
+        public Builder withParam(String key, String value) {
+            url.protocol = "?" + key + "+" + value;
+            return this;
+        }
+
+        public String build() {
             String result = "";
             new StringBuilder()
                     .append(url.protocol)
                     .append(url.domain)
                     .append(url.port)
                     .append(url.path)
-                    .append(url.params)
-                    .append(url.withParam)
+                    .append(url.param)
                     .toString();
             return result;
         }
     }
+
 
 }
