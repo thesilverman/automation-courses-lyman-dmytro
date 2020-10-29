@@ -38,13 +38,13 @@ public class TestUrl {
             return this;
         }
 
-        public Builder withParam(String param) {
-            url.param.put("0", "?");
+        public Builder withParam(HashMap<String, String> params) {
+            url.param.put("/", "?");
             return this;
         }
 
         public Builder withParam(String key, String value) {
-            url.param.put("?", "+");
+            url.param.put(key, value);
             return this;
         }
 
@@ -55,7 +55,7 @@ public class TestUrl {
                     .append(url.domain)
                     .append(url.port)
                     .append(url.path)
-
+                    .append(url.param.get("&"))
                     .toString();
             return result;
         }
