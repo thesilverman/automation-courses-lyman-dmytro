@@ -38,8 +38,8 @@ public class TestUrl {
             return this;
         }
 
-        public Builder withParam(HashMap<String, String> params) {
-            url.param.put("/", "?");
+        public Builder withParam(HashMap<String, String> param) {
+            url.param.putAll(param);
             return this;
         }
 
