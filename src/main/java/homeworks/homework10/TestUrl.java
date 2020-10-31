@@ -1,7 +1,6 @@
 package homeworks.homework10;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class TestUrl {
 
@@ -9,7 +8,7 @@ public class TestUrl {
     public String domain;
     public String port;
     public String path;
-    HashMap<String, String> param = new HashMap<>();
+    HashMap<String, String> param;
 
     public static class Builder {
         private TestUrl url;
@@ -29,7 +28,7 @@ public class TestUrl {
         }
 
         public Builder withPort(String port) {
-            url.port = ":" + port;
+            url.port = ":" + port + "?";
             return this;
         }
 
@@ -49,15 +48,13 @@ public class TestUrl {
         }
 
         public String build() {
-            String result = "";
-            new StringBuilder()
+            return new StringBuilder()
                     .append(url.protocol)
                     .append(url.domain)
                     .append(url.port)
                     .append(url.path)
-                    .append(url.param.get("&"))
+                    .append(url.param)
                     .toString();
-            return result;
         }
     }
 
