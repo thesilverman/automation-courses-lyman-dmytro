@@ -6,6 +6,7 @@ public class BuilderSuite {
 
     public static void main(String[] args) {
 
+
         HashMap<String, String> param = new HashMap<>();
         param.put("first", "first");
         param.put("second", "second");
