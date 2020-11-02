@@ -26,11 +26,6 @@ public class ConfigurationManager {
     public BrowserType getTestBrowser(){
         return BrowserType.valueOf(getEnvinromentVariableOrDefault("browser", "chrome").toUpperCase());
 
-    public String getTestBrowser(){
-        return getEnvinromentVariableOrDefault("browser", "chrome");
-
-
-
 
     }
 
@@ -42,9 +37,6 @@ public class ConfigurationManager {
     public RunOn getRunOn(){
         return RunOn.valueOf(getEnvinromentVariableOrDefault("runOn", "local"));
 
-    public String getRunOn(){
-        return getEnvinromentVariableOrDefault("runOn", "local");
 
-    }
-
+}
 }
