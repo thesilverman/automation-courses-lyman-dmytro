@@ -1,6 +1,8 @@
 package homeworks.homework11.tests;
 
 
+import homeworks.homework11.tests.DataMapperTests.NegativeDataMapperTests;
+import homeworks.homework11.tests.DataMapperTests.PositiveDataMapper;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.RunWith;
@@ -12,7 +14,9 @@ import org.junit.runners.model.InitializationError;
 @RunWith(org.junit.runners.Suite.class)
 @org.junit.runners.Suite.SuiteClasses({
         NegativeConverterTest.class,
-        PositiveConvertorTests.class
+        PositiveConvertorTests.class,
+        NegativeDataMapperTests.class,
+        PositiveDataMapper.class
 })
 public class Suite extends BlockJUnit4ClassRunner {
     private TestListener listener;

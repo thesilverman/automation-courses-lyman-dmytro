@@ -1,17 +1,22 @@
 package homeworks.homework10;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class TestUrl {
 
-    public String protocol;
-    public String domain;
+    public String protocol = "";
+    public String domain = "";
     public String port;
-    public String path;
-    HashMap<String, String> param;
+    public String path = "";
+    public Map<String, String> param = new HashMap<>();
 
     public static class Builder {
         private TestUrl url;
+
+        public Builder(TestUrl url) {
+            this.url = url;
+        }
 
         public Builder() {
             url = new TestUrl();
@@ -37,8 +42,8 @@ public class TestUrl {
             return this;
         }
 
-        public Builder withParam(HashMap<String, String> param) {
-            url.param.putAll(param);
+        public Builder withParam(HashMap<String, String> params) {
+            url.param.putAll(params);
             return this;
         }
 
@@ -47,13 +52,29 @@ public class TestUrl {
             return this;
         }
 
+        private String convertMapToString(Map<String, String> param){
+            StringBuilder result = new StringBuilder();
+            for (Map.Entry<String, String> entry: param.entrySet()) {
+                result.append(entry.getKey());
+                if (!entry.getValue().equals("")){
+                    result.append("=");
+                    result.append(entry.getValue());
+                }
+                result.append("&");
+            }
+            return result.toString().substring(0, result.toString().length() -1);
+
+        }
+
         public String build() {
+            url.domain = url.domain.endsWith(".") ? url.domain.
+                    substring(0, url.domain.length() -1 ): url.domain;
             return new StringBuilder()
                     .append(url.protocol)
                     .append(url.domain)
                     .append(url.port)
                     .append(url.path)
-                    .append(url.param)
+                    .append("?" + convertMapToString(url.param))
                     .toString();
         }
     }

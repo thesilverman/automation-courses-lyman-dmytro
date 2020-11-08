@@ -21,10 +21,13 @@ public class RandomStringGenerator {
         switch (mode){
             case ALPHA:
                 tempString = str;
+                break;
             case NUMERIC:
                 tempString = num;
+                break;
             case ALFANUMERIC:
                 tempString = str + num;
+                break;
         }
 
         Random rand = new Random();
