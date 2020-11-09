@@ -1,55 +1,35 @@
 package homeworks.Infrastructure.wdm;
 
+import org.openqa.selenium.WebDriver;
+
 public class DefaultWebDriverManager implements WebDriverManager{
 
-
-//    @Override
-//    public String getBrowser() {
-//        String runOn = ConfigurationManager.getInstance().getRunOn();
-//
-//        WebDriverFactory factory;
-//
-//        switch (runOn) {
-//            case "local":
-//                factory = new LocalWebDriverFactory();
-//                break;
-//            case "remote":
-//                factory = new RemoteWebDriverFactory();
-//                break;
-//            case "cloud":
-//                factory = new CloudWebDriverFactory();
-//                break;
-//            default:
-//                return "";
-//        }
-//        return factory.create();
-//    }
         WebDriverFactory factory;
 
-    public String getBrowser(RunOn run){
-
+    public WebDriver getBrowser(RunOn run){
         RunOn runOn = ConfigurationManager.getInstance().getRunOn();
-
         switch (runOn){
             case CLOUD:
-                factory = new LocalWebDriverFactory();
+                factory = new CloudWebDriverFactory();
             case LOCAL:
                 factory = new LocalWebDriverFactory();
             case REMOTE:
                 factory = new RemoteWebDriverFactory();
             default:
-                return "";
+                return factory.create();
         }
     }
 
     @Override
-    public String getBrowser() {
+    public WebDriver getDriver() {
         return null;
 
 }
 
     @Override
-    public void destroyBrowser(String browser) {
-
+    public void destroyDriver(WebDriver driver) {
+        if (driver != null){
+            driver.quit();
+        }
     }
 }

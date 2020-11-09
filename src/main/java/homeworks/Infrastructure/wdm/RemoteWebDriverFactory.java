@@ -1,19 +1,37 @@
 package homeworks.Infrastructure.wdm;
 
-public class RemoteWebDriverFactory implements WebDriverFactory {
+import homeworks.Infrastructure.wdm.capabilities.BrowserCapabilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class RemoteWebDriverFactory implements WebDriverFactory {
+    DesiredCapabilities caps = new DesiredCapabilities();
 
     @Override
-    public String create() {
+    public WebDriver create() {
+        WebDriver driver = null;
 
         BrowserType testBrowser = ConfigurationManager.getInstance().getTestBrowser();
         switch (testBrowser) {
             case CHROME:
-                return "new Google chrome driver";
+                caps.merge(BrowserCapabilities.chromeCapabilities());
+                break;
             case FIREFOX:
-
+                caps.merge(BrowserCapabilities.fireFoxCapabilities());
+                break;
+            default:
+                throw new IllegalArgumentException(String.format("unable to create driver with type %s", testBrowser));
         }
-        return null;
-    }
 
+        try {
+            driver = new RemoteWebDriver(new URL(ConfigurationManager.getInstance().getRemoteHubUrl()), caps);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return driver;
+    }
 }
