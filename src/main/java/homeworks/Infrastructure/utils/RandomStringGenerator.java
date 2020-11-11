@@ -5,11 +5,11 @@ import java.util.Random;
 public class RandomStringGenerator {
 
      public enum TypeEnum {
-        ALPHA("alfa"),
-        NUMERIC("numeric"),
-        ALFANUMERIC("alphaNumeric");
+        ALPHA("alfa", 10),
+        NUMERIC("numeric", 10),
+        ALFANUMERIC("alphaNumeric", 10);
 
-         TypeEnum(String mode) {
+         TypeEnum(String mode, int lenght) {
          }
      }
 
