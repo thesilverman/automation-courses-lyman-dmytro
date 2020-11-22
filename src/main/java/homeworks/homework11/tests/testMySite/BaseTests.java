@@ -22,11 +22,11 @@ public class BaseTests {
         driver.manage().window().maximize();
     }
 
-//    @After
-//    public void afterTest(){
-//        if(driver != null){
-//            driver.quit();
-//        }
-//    }
+    @After
+    public void afterTest(){
+        if(driver != null){
+            driver.quit();
+        }
+    }
 
 }

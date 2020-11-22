@@ -1,17 +1,21 @@
 package homeworks.Infrastructure.wdm;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class RemoteWebDriverFactory implements WebDriverFactory {
 
 
     @Override
-    public String create() {
+    public WebDriver create() {
 
         BrowserType testBrowser = ConfigurationManager.getInstance().getTestBrowser();
         switch (testBrowser) {
             case CHROME:
-                return "new Google chrome driver";
+                return new ChromeDriver();
             case FIREFOX:
-
+                return new FirefoxDriver();
         }
         return null;
     }

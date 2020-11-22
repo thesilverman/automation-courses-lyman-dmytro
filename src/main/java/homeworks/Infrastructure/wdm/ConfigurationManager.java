@@ -34,8 +34,8 @@ public class ConfigurationManager {
     }
 
 
-    public RunOn getRunOn(){
-        return RunOn.valueOf(getEnvinromentVariableOrDefault("runOn", "local"));
+    public String getRunOn(){
+        return String.valueOf(RunOn.valueOf(getEnvinromentVariableOrDefault("runOn", "local")));
 
 
 }

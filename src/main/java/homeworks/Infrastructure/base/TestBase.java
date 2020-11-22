@@ -2,41 +2,41 @@ package homeworks.Infrastructure.base;
 
 import homeworks.Infrastructure.Logging.FileTestLogger;
 import homeworks.Infrastructure.TestServer;
+import homeworks.Infrastructure.wdm.DefaultWebDriverManager;
 import homeworks.Infrastructure.wdm.WebDriverManager;
+import org.junit.After;
+import org.junit.Before;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestBase {
 
     private WebDriverManager wdn;
     protected TestServer server;
     protected FileTestLogger logger;
-    private String browser;
+    protected WebDriver driver;
+    protected JavascriptExecutor js;
+    protected WebDriverWait wait;
 
-    public void setup(){
+    @Before
+    public void beforeTest(){
+        wdn = new DefaultWebDriverManager();
         logger = new FileTestLogger();
         server = new TestServer();
-        String url = server.getUrl();
-        logger.log(url);
-        logger.log(browser);
-        beforeTest();
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, 5, 1);
+        js = (JavascriptExecutor) driver;
+        logger.log(server.getUrl());
+        driver.manage().window().maximize();
     }
 
+    @After
     public void tearDown(){
-        wdn.destroyBrowser(browser);
-        afterTest();
+        wdn.destroyBrowser(driver);
     }
-
-    private void beforeTest() {
-        logger.atStart();
-    }
-
-    private void afterTest(){
-        logger.atFinish();
-    }
-
-
-//    public AbstractLogger getLogger(){
-//        return ConfigurationManager.getInstance().getCurrentEnvironment().equals("local") ? new StdTestLogger() :
-//                new FileTestLogger();
-//    }
 
 }
+
+

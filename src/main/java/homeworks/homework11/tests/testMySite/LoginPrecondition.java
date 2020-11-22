@@ -1,13 +1,15 @@
 package homeworks.homework11.tests.testMySite;
 
+import homeworks.Infrastructure.base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPrecondition extends BaseTests{
+public class LoginPrecondition extends TestBase {
     @Override
     public void beforeTest() {
         super.beforeTest();
+        openMainPage();
         navigateToLoginPage();
     }
 
@@ -19,4 +21,7 @@ public class LoginPrecondition extends BaseTests{
         wait.until(ExpectedConditions.urlContains("wp-login.php"));
     }
 
+    public void openMainPage(){
+        driver.get(server.getUrl());
+    }
 }

@@ -1,9 +1,9 @@
 package homeworks.Infrastructure.wdm;
 
+import org.openqa.selenium.WebDriver;
+
 public interface WebDriverManager {
-
+    WebDriver getDriver();
     String getBrowser();
-
-    void destroyBrowser(String browser);
-
+    void destroyBrowser(WebDriver driver);
 }
