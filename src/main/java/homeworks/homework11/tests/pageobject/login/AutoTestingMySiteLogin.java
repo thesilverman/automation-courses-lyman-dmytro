@@ -1,4 +1,4 @@
-package homeworks.homework11.tests.testMySite;
+package homeworks.homework11.tests.pageobject.login;
 
 import org.junit.Test;
 import org.openqa.selenium.*;
