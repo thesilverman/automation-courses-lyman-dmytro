@@ -28,7 +28,6 @@ public class TestBase {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 5, 1);
         js = (JavascriptExecutor) driver;
-        logger.log(server.getUrl());
         driver.manage().window().maximize();
     }
 
