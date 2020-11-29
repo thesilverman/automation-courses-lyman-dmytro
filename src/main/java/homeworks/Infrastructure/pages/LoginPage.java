@@ -74,4 +74,5 @@ public class LoginPage {
         wait.until(ExpectedConditions.urlContains("wp-login.php?loggedout=true&wp_lang=en_US"));
         assertEquals("You are now logged out.", massageLoginOut.getText());
     }
+
 }

@@ -2,6 +2,8 @@ package homeworks.homework11.tests.pageobject.login;
 
 import homeworks.Infrastructure.base.TestBase;
 import homeworks.Infrastructure.pages.MainPage;
+import homeworks.Infrastructure.utils.SeleniumUtils;
+
 import org.junit.Test;
 
 public class LoginTestPoV1 extends TestBase {
@@ -67,6 +69,29 @@ public class LoginTestPoV1 extends TestBase {
                 .navigatePostPage()
                 .commendFieldPostPage()
                 .verifyVisiblePost();
+    }
+
+    @Test
+    public void PositiveTestPostVisible() {
+        MainPage mainPage = new MainPage(driver,wait, js);
+        mainPage.openMainPage(server.getUrl())
+                .navigatePostPage()
+                .commendFieldPostPage()
+                .backToMainPageFromPostPage()
+                .navigateToLoginPage()
+                .populateLoginField("admin")
+                .populatePassField("admin")
+                .populateClickButton()
+                .clickLinkCommentPage()
+                .navigatePostPage();
+    }
+
+    @Test
+    public void PositiveCheckSearch(){
+        MainPage mainPage = new MainPage(driver, wait, js);
+        mainPage.openMainPage(server.getUrl())
+                .searchPositiveChek();
+        SeleniumUtils.makeScreenShotWholePage(driver, "screen");
     }
 
 }

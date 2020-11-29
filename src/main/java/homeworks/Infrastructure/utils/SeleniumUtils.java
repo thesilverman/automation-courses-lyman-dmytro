@@ -1,6 +1,14 @@
 package homeworks.Infrastructure.utils;
 
 import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
+
 
 public class SeleniumUtils {
 
@@ -30,4 +38,14 @@ public class SeleniumUtils {
         driver.switchTo().window(parentWindow);
     }
 
+
+    public static void makeScreenShotWholePage(WebDriver driver, String name){
+        Screenshot scrShot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+        try {
+            ImageIO.write(scrShot.getImage(), "PNG",  new File(System.getProperty("user.dir") + "/" + name + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+    }
+
+}
 }

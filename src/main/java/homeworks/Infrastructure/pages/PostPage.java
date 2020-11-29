@@ -1,5 +1,5 @@
 package homeworks.Infrastructure.pages;
-
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +13,7 @@ public class PostPage {
     WebDriver driver;
     WebDriverWait wait;
 
+    JavascriptExecutor js;
     @FindBy(xpath = "//*[@id=\"post-1\"]/header/h1")
     private WebElement checkTestPostPage;
 
@@ -33,6 +34,14 @@ public class PostPage {
 
     @FindBy(xpath = "//div[@class=\"comment-content\"]")
     private WebElement checkVisiblePost;
+
+    @FindBy(xpath = "//*[@id=\"masthead\"]/div/div[2]/div/div/p[1]/a")
+    private WebElement linkToMainPage;
+
+    public PostPage(WebDriver driver, WebDriverWait wait) {
+        this.driver = driver;
+        this.wait = wait;
+        js = (JavascriptExecutor) driver;
 
     public PostPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -62,4 +71,11 @@ public class PostPage {
         Thread.sleep(3000);
         assertEquals("comment for this page", checkVisiblePost.getText());
     }
+
+
+    public MainPage backToMainPageFromPostPage(){
+        linkToMainPage.click();
+        return new MainPage(driver, wait, js);
+    }
+
 }
