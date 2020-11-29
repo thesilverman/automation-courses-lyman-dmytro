@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
+
 public class SeleniumUtils {
 
     private static String parentWindow;
@@ -36,6 +37,7 @@ public class SeleniumUtils {
     public static void switchToWindowByWindow(WebDriver driver){
         driver.switchTo().window(parentWindow);
     }
+
 
     public static void makeScreenShotWholePage(WebDriver driver, String name){
         Screenshot scrShot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);

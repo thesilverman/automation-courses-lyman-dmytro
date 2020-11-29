@@ -1,5 +1,4 @@
 package homeworks.Infrastructure.pages;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,8 +12,8 @@ public class PostPage {
 
     WebDriver driver;
     WebDriverWait wait;
-    JavascriptExecutor js;
 
+    JavascriptExecutor js;
     @FindBy(xpath = "//*[@id=\"post-1\"]/header/h1")
     private WebElement checkTestPostPage;
 
@@ -43,6 +42,10 @@ public class PostPage {
         this.driver = driver;
         this.wait = wait;
         js = (JavascriptExecutor) driver;
+
+    public PostPage(WebDriver driver, WebDriverWait wait) {
+        this.driver = driver;
+        this.wait = wait;
         PageFactory.initElements(driver, this);
     }
 
@@ -68,6 +71,7 @@ public class PostPage {
         Thread.sleep(3000);
         assertEquals("comment for this page", checkVisiblePost.getText());
     }
+
 
     public MainPage backToMainPageFromPostPage(){
         linkToMainPage.click();
