@@ -8,4 +8,9 @@ public interface WebDriverManager {
 
     void destroyDriver(WebDriver driver);
 
+
+public interface WebDriverManager {
+    WebDriver getDriver();
+    String getBrowser();
+    void destroyBrowser(WebDriver driver);
 }

@@ -8,6 +8,8 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class LocalWebDriverFactory implements WebDriverFactory {
+
+public class LocalWebDriverFactory implements WebDriverFactory {
     @Override
     public WebDriver create() {
         BrowserType testBrowser = ConfigurationManager.getInstance().getTestBrowser();
@@ -16,6 +18,7 @@ public class LocalWebDriverFactory implements WebDriverFactory {
                 return new ChromeDriver();
             case FIREFOX:
                 return new FirefoxDriver();
+
             case IE:
                 return new InternetExplorerDriver();
             case OPERA:
