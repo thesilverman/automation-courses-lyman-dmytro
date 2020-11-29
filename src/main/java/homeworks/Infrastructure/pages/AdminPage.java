@@ -11,6 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 public class AdminPage {
     @FindBy(xpath = "//*[@id=\"wp-admin-bar-my-account\"]/a")
+
     private WebElement loginMassage;
 
     @FindBy(xpath = "//*[@id=\"wp-admin-bar-my-account\"]/a")
@@ -43,6 +44,15 @@ public class AdminPage {
     @FindBy(xpath = "//*[@id=\"wp-admin-bar-site-name\"]/a")
     private WebElement backToMainPage;
 
+            private WebElement loginMassage;
+
+    @FindBy(xpath = "//*[@id=\"wp-admin-bar-my-account\"]/a")
+            private WebElement hoverPopUpAdminLogin;
+
+    @FindBy(xpath = "//*[@id=\"wp-admin-bar-logout\"]/a")
+            private WebElement buttonLogOut;
+
+
     WebDriver driver;
     WebDriverWait wait;
     JavascriptExecutor js;
@@ -67,6 +77,7 @@ public class AdminPage {
         return new LoginPage(driver, js);
     }
 
+
     public MainPage clickLinkCommentPage() {
         clickComments.click();
         clickCheckboxPost.click();
@@ -76,4 +87,5 @@ public class AdminPage {
         backToMainPage.click();
         return new MainPage(driver, wait, js);
     }
+
 }
