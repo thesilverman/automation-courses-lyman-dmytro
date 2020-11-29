@@ -20,6 +20,8 @@ public class SeleniumUtils {
         parentWindow = driver.getWindowHandle();
     }
 
+
+
     public void switchToWindowByTitle(WebDriver driver, String title){
         parentWindow = driver.getWindowHandle();
         for(String window: driver.getWindowHandles()){
