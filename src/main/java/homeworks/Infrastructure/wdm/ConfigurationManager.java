@@ -39,4 +39,12 @@ public class ConfigurationManager {
 
 
 }
+
+    public String getRemoteHubUrl() {
+        return getEnvinromentVariableOrDefault("hubUrl", "http://hubUrl.test.site");
+    }
+
+    public String getCloudUrl() {
+        return getEnvinromentVariableOrDefault("cloudUrl", "http://cloud.test.site");
+    }
 }
