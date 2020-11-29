@@ -11,13 +11,37 @@ import static org.junit.Assert.assertEquals;
 
 public class AdminPage {
     @FindBy(xpath = "//*[@id=\"wp-admin-bar-my-account\"]/a")
-            private WebElement loginMassage;
+    private WebElement loginMassage;
 
     @FindBy(xpath = "//*[@id=\"wp-admin-bar-my-account\"]/a")
-            private WebElement hoverPopUpAdminLogin;
+    private WebElement hoverPopUpAdminLogin;
 
     @FindBy(xpath = "//*[@id=\"wp-admin-bar-logout\"]/a")
-            private WebElement buttonLogOut;
+    private WebElement buttonLogOut;
+
+    @FindBy(xpath = "//*[@id=\"menu-comments\"]/a/div[3]")
+    private WebElement clickComments;
+
+    @FindBy(xpath = "//*[@id=\"comment-8\"]/td[2]")
+    private WebElement blockCommentsView;
+
+    @FindBy(xpath = "//*[@id=\"comment-8\"]/td[2]/div[3]/span[1]/a")
+    private WebElement buttonUnapprove;
+
+    @FindBy(xpath = "//*[@id=\"cb-select-all-1\"]")
+    private WebElement clickCheckboxPost;
+
+    @FindBy(xpath = "//*[@id=\"bulk-action-selector-bottom\"]")
+    private WebElement clickPopupMenuTrash;
+
+    @FindBy(xpath = "//*[@id=\"bulk-action-selector-bottom\"]/option[5]")
+    private WebElement clickTrash;
+
+    @FindBy(xpath = "//*[@id=\"doaction2\"]")
+    private WebElement buttonApply;
+
+    @FindBy(xpath = "//*[@id=\"wp-admin-bar-site-name\"]/a")
+    private WebElement backToMainPage;
 
     WebDriver driver;
     WebDriverWait wait;
@@ -43,4 +67,13 @@ public class AdminPage {
         return new LoginPage(driver, js);
     }
 
+    public MainPage clickLinkCommentPage() {
+        clickComments.click();
+        clickCheckboxPost.click();
+        clickPopupMenuTrash.click();
+        clickTrash.click();
+        buttonApply.click();
+        backToMainPage.click();
+        return new MainPage(driver, wait, js);
+    }
 }

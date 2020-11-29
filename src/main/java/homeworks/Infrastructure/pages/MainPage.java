@@ -15,6 +15,12 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"post-1\"]/header/div/a")
     private WebElement searchPostClick;
 
+    @FindBy(xpath = "//*[@id=\"search-form-1\"]")
+    private WebElement searchStroke;
+
+    @FindBy(xpath = "//*[@id=\"search-2\"]/form/button")
+    private WebElement linkSearch;
+
     WebDriver driver;
     WebDriverWait wait;
     JavascriptExecutor js;
@@ -27,12 +33,11 @@ public class MainPage {
     }
 
     public MainPage openMainPage(String url){
-        driver.get(url);
+        driver.get("http://testautomationcuorses.iblogger.org/wordpress/");
         return this;
     }
 
     public LoginPage navigateToLoginPage(){
-        wait.until(ExpectedConditions.urlContains("wordpress/?i=1"));
         loginButton.click();
         wait.until(ExpectedConditions.urlContains("wp-login.php"));
         return new LoginPage(driver, js);
@@ -42,6 +47,12 @@ public class MainPage {
         searchPostClick.click();
         wait.until(ExpectedConditions.urlContains("/2020/11/07/hello-world/"));
         return new PostPage(driver, wait);
+    }
+
+    public void searchPositiveChek(){
+        searchStroke.click();
+        searchStroke.sendKeys("Hello World");
+        linkSearch.click();
     }
 
 }
