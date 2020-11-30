@@ -12,8 +12,8 @@ public class PostPage {
 
     WebDriver driver;
     WebDriverWait wait;
-
     JavascriptExecutor js;
+
     @FindBy(xpath = "//*[@id=\"post-1\"]/header/h1")
     private WebElement checkTestPostPage;
 
@@ -42,14 +42,10 @@ public class PostPage {
         this.driver = driver;
         this.wait = wait;
         js = (JavascriptExecutor) driver;
-
-    public PostPage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
         PageFactory.initElements(driver, this);
     }
 
-    public PostPage commendFieldPostPage(){
+    public PostPage commendFieldPostPage() {
         textAreaComment.click();
         textAreaComment.sendKeys("comment for this page");
         inputAreaAuthorPostPage.click();
@@ -67,13 +63,11 @@ public class PostPage {
         return new PostPage(driver, wait);
     }
 
-    public void verifyVisiblePost() throws InterruptedException {
-        Thread.sleep(3000);
+    public void verifyVisiblePost() {
         assertEquals("comment for this page", checkVisiblePost.getText());
     }
 
-
-    public MainPage backToMainPageFromPostPage(){
+    public MainPage backToMainPageFromPostPage() {
         linkToMainPage.click();
         return new MainPage(driver, wait, js);
     }

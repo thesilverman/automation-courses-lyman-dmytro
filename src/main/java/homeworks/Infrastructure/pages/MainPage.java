@@ -1,5 +1,6 @@
 package homeworks.Infrastructure.pages;
 
+import homeworks.Infrastructure.base.TestBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,9 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MainPage {
+public class MainPage extends TestBase {
     @FindBy(xpath = "//*[@id=\"meta-2\"]/ul/li[1]/a")
-            private WebElement loginButton;
+    private WebElement loginButton;
 
     @FindBy(xpath = "//*[@id=\"post-1\"]/header/div/a")
     private WebElement searchPostClick;
@@ -35,17 +36,12 @@ public class MainPage {
     }
 
     public MainPage openMainPage(String url){
-
         driver.get("http://testautomationcuorses.iblogger.org/wordpress/");
-
         driver.get(url);
-
         return this;
     }
 
     public LoginPage navigateToLoginPage(){
-
-
         wait.until(ExpectedConditions.urlContains("wordpress/?i=1"));
         loginButton.click();
         wait.until(ExpectedConditions.urlContains("wp-login.php"));

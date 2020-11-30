@@ -26,15 +26,6 @@
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
-        <dependency>
-
-            <groupId>ru.yandex.qatools.ashot</groupId>
-
-            <artifactId>ashot</artifactId>
-
-            <version>1.5.4</version>
-
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -61,6 +52,13 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>

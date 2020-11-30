@@ -20,9 +20,7 @@ public class SeleniumUtils {
         parentWindow = driver.getWindowHandle();
     }
 
-
-
-    public void switchToWindowByTitle(WebDriver driver, String title){
+    public static void switchToWindowByTitle(WebDriver driver, String title){
         parentWindow = driver.getWindowHandle();
         for(String window: driver.getWindowHandles()){
             driver.switchTo().window(window);
@@ -32,7 +30,7 @@ public class SeleniumUtils {
         }
     }
 
-    public void switchToWindowByUrl(WebDriver driver, String url){
+    public static void switchToWindowByUrl(WebDriver driver, String url){
         parentWindow = driver.getWindowHandle();
         for(String window: driver.getWindowHandles()){
             driver.switchTo().window(window);
@@ -42,11 +40,11 @@ public class SeleniumUtils {
         }
     }
 
-    public void switchToWindowByWindow(WebDriver driver){
+    public static void switchToWindowByWindow(WebDriver driver){
         driver.switchTo().window(parentWindow);
     }
 
-    public void makeScreenShotWholePage(WebDriver driver, String name){
+    public static void makeScreenShotWholePage(WebDriver driver, String name){
         Screenshot scrShot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
         try {
             ImageIO.write(scrShot.getImage(), "PNG",  new File(System.getProperty("user.dir") + "/" + name + ".png"));
