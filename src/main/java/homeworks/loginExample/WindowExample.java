@@ -17,26 +17,27 @@ public class WindowExample {
         JavascriptExecutor js = (JavascriptExecutor) dr;
         js.executeScript("window.open('http://rozetka.ua')");
         js.executeScript("window.open('http://www.selenium.dev/')");
+        SeleniumUtils su = new SeleniumUtils(dr);
 
-        SeleniumUtils.switchToWindowByTitle(dr, "Интернет-магазин ROZETKA™: официальный сайт самого популярного онлайн-гипермаркета в Украине");
+        su.switchToWindowByTitle(dr, "Интернет-магазин ROZETKA™: официальный сайт самого популярного онлайн-гипермаркета в Украине");
         System.out.println(dr.getTitle());
         System.out.println(dr.getCurrentUrl());
 
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@");
 
-        SeleniumUtils.switchToWindowByWindow(dr);
+        su.switchToWindowByWindow(dr);
         System.out.println(dr.getTitle());
         System.out.println(dr.getCurrentUrl());
 
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@");
 
-        SeleniumUtils.switchToWindowByUrl(dr, "https://www.selenium.dev/");
+        su.switchToWindowByUrl(dr, "https://www.selenium.dev/");
         System.out.println(dr.getTitle());
         System.out.println(dr.getCurrentUrl());
 
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@");
 
-        SeleniumUtils.switchToWindowByWindow(dr);
+        su.switchToWindowByWindow(dr);
         System.out.println(dr.getTitle());
         System.out.println(dr.getCurrentUrl());
 
@@ -48,9 +49,7 @@ public class WindowExample {
                 System.out.println(dr.getTitle());
             }
         }
-
         dr.quit();
-
     }
 
 }
