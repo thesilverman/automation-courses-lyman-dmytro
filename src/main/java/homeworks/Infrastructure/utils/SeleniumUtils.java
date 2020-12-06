@@ -1,6 +1,7 @@
 package homeworks.Infrastructure.utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
@@ -12,11 +13,10 @@ import java.io.IOException;
 public class SeleniumUtils {
 
     private static String parentWindow;
-    WebDriver driver;
+    WebDriver dr;
 
-    public SeleniumUtils(WebDriver driver) {
-        this.driver = driver;
-        parentWindow = driver.getWindowHandle();
+    public SeleniumUtils(WebDriver dr) {
+        this.dr = dr;
     }
 
     public void switchToWindowByTitle(WebDriver driver, String title){

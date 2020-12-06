@@ -12,8 +12,8 @@ public class PostPage {
 
     WebDriver driver;
     WebDriverWait wait;
-
     JavascriptExecutor js;
+
     @FindBy(xpath = "//*[@id=\"post-1\"]/header/h1")
     private WebElement checkTestPostPage;
 
@@ -38,14 +38,10 @@ public class PostPage {
     @FindBy(xpath = "//*[@id=\"masthead\"]/div/div[2]/div/div/p[1]/a")
     private WebElement linkToMainPage;
 
-    public PostPage(WebDriver driver, WebDriverWait wait) {
+    public PostPage(WebDriver driver, WebDriverWait wait, JavascriptExecutor js) {
         this.driver = driver;
         this.wait = wait;
         js = (JavascriptExecutor) driver;
-
-    public PostPage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
         PageFactory.initElements(driver, this);
     }
 
@@ -64,18 +60,14 @@ public class PostPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return new PostPage(driver, wait);
+        return new PostPage(driver, wait, js);
     }
 
-    public void verifyVisiblePost() throws InterruptedException {
-        Thread.sleep(3000);
+    public void verifyVisiblePost() {
         assertEquals("comment for this page", checkVisiblePost.getText());
     }
 
-
-    public MainPage backToMainPageFromPostPage(){
-        linkToMainPage.click();
-        return new MainPage(driver, wait, js);
+    public MainPage backToMainPageFromPostPage() {
+        return new MainPage(driver,wait, js);
     }
-
 }

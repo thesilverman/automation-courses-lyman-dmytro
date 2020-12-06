@@ -9,10 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WindowExample {
 
+    WebDriver dr = new ChromeDriver();
+
     @Test
     public void windowsSwitchTest(){
-        WebDriver dr = new ChromeDriver();
-
         dr.get("http://google.com");
         JavascriptExecutor js = (JavascriptExecutor) dr;
         js.executeScript("window.open('http://rozetka.ua')");

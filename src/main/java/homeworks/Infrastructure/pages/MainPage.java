@@ -35,17 +35,12 @@ public class MainPage {
     }
 
     public MainPage openMainPage(String url){
-
         driver.get("http://testautomationcuorses.iblogger.org/wordpress/");
-
         driver.get(url);
-
         return this;
     }
 
     public LoginPage navigateToLoginPage(){
-
-
         wait.until(ExpectedConditions.urlContains("wordpress/?i=1"));
         loginButton.click();
         wait.until(ExpectedConditions.urlContains("wp-login.php"));
@@ -55,7 +50,7 @@ public class MainPage {
     public PostPage navigatePostPage(){
         searchPostClick.click();
         wait.until(ExpectedConditions.urlContains("/2020/11/07/hello-world/"));
-        return new PostPage(driver, wait);
+        return new PostPage(driver, wait, js);
     }
 
 
