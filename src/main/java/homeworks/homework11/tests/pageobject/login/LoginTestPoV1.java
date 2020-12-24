@@ -8,6 +8,8 @@ import org.junit.Test;
 
 public class LoginTestPoV1 extends TestBase {
 
+    SeleniumUtils su = new SeleniumUtils(driver);
+
     @Test
     public void PositiveTestLoginIn() {
         MainPage mainPage = new MainPage(driver, wait, js);
@@ -91,7 +93,7 @@ public class LoginTestPoV1 extends TestBase {
         MainPage mainPage = new MainPage(driver, wait, js);
         mainPage.openMainPage(server.getUrl())
                 .searchPositiveChek();
-        SeleniumUtils.makeScreenShotWholePage(driver, "screen");
+        su.makeScreenShotWholePage(driver, "screen");
     }
 
 }

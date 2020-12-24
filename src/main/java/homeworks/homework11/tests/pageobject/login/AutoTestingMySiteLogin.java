@@ -1,5 +1,6 @@
 package homeworks.homework11.tests.pageobject.login;
 
+import homeworks.Infrastructure.base.TestBase;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.junit.Assert.assertEquals;
 
-public class AutoTestingMySiteLogin extends LoginPrecondition{
+public class AutoTestingMySiteLogin extends TestBase {
 
     private void populateLoginFormatSubmit(String name, String pass){
         js.executeScript(String.format("document.getElementById('user_login').value='%s'", name));
