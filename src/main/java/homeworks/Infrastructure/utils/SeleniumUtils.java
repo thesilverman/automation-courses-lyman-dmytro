@@ -13,11 +13,21 @@ import java.io.IOException;
 public class SeleniumUtils {
 
     private static String parentWindow;
+
     WebDriver dr;
 
     public SeleniumUtils(WebDriver dr) {
         this.dr = dr;
     }
+
+
+    WebDriver driver;
+
+    public SeleniumUtils(WebDriver driver) {
+        this.driver = driver;
+        parentWindow = driver.getWindowHandle();
+    }
+
 
     public void switchToWindowByTitle(WebDriver driver, String title){
         parentWindow = driver.getWindowHandle();

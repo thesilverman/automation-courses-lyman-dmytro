@@ -3,7 +3,10 @@ package homeworks.Infrastructure.wdm;
 public enum BrowserType {
 
     CHROME("google"),
-    FIREFOX("firefox");
+    FIREFOX("firefox"),
+    IE("ie"),
+    SAFARI("safari"),
+    OPERA("opera");
 
     private final String browser;
 

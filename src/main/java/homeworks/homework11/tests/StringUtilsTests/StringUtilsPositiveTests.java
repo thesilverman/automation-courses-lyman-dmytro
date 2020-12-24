@@ -28,4 +28,15 @@ public class StringUtilsPositiveTests {
             Assert.assertThat(ram.str, CoreMatchers.containsString(e));
         }
     }
+
+    @Test
+    public void StringGeneratorTestsNumAlf(){
+        int expectedLength = 10;
+        String actual = ram.stringGenerator(RandomStringGenerator.TypeEnum.ALFANUMERIC, 10);
+        Assert.assertEquals(expectedLength, actual.length());
+        for (String e: actual.split("")){
+            Assert.assertThat(ram.str, CoreMatchers.containsString(e));
+        }
+    }
+
 }

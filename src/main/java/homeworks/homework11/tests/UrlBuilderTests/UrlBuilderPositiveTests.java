@@ -9,8 +9,13 @@ public class UrlBuilderPositiveTests {
 
     @Test
     public void urlBuilder(){
-        String expectedUrl = "http://google.com.ua:80?/search?third=third&first=first&second=second";
-        String actualUrl = testUrl.withProtocol("wfwefwef").build();
+        String expectedUrl = "http://google.com.ua:80?/search?param=param";
+        String actualUrl = testUrl.withProtocol("http://")
+                .withDomain("google.com.ua")
+                .withPort("80")
+                .withPath("/search")
+                .withParam("param", "param")
+                .build();
         Assert.assertEquals(expectedUrl, actualUrl);
     }
 
